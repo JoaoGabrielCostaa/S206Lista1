@@ -1,0 +1,195 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-25T19:01:41.051Z",
+    "end": "2025-05-25T19:01:59.770Z",
+    "duration": 18719,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2824aa81-12cc-44b7-a1af-4c07571f1d6c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Lista1_LaraCG_Projetos.cy.js",
+      "file": "cypress\\e2e\\Lista1_LaraCG_Projetos.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fe9eedb9-871c-4cce-b569-4feed74fbd01",
+          "title": "6 Testes de Projetos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Teste 1: Teste para abrir um projeto e salvar",
+              "fullTitle": "6 Testes de Projetos Teste 1: Teste para abrir um projeto e salvar",
+              "timedOut": null,
+              "duration": 3728,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginSite();\n//Abrindo o projeto #8\ncy.get('[href=\"/adm/projetos/8\"]').click();\n//Clicando no botão Salvar Projeto\ncy.get('.iTLMzn > .sc-csKJxZ').click();\n//Texto que deve aparecer quando o botão de Salvar Projeto for pressionado \ncy.get('.Toastify__toast-body').should('contain.text', 'O nome do projeto não pode estar vazio.');",
+              "err": {},
+              "uuid": "bee6177d-f184-414b-b411-8fcbd674c0d4",
+              "parentUUID": "fe9eedb9-871c-4cce-b569-4feed74fbd01",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste 2: Clicar para modificar o título de um projeto e salvar",
+              "fullTitle": "6 Testes de Projetos Teste 2: Clicar para modificar o título de um projeto e salvar",
+              "timedOut": null,
+              "duration": 2893,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginSite();\n//Abrindo o projeto #12-Teste2\ncy.get('[href=\"/adm/projetos/12\"]').click();\n//Clicando o botão do bloco de notas ao lado do nome do projeto\ncy.get('.sc-iCKXBC > [viewBox=\"0 0 576 512\"]').click();\n//Clicando o botão para salvar \ncy.get('.sc-iCKXBC > [viewBox=\"0 0 448 512\"]').click();\n//Clicando no botão Salvar Projeto\ncy.get('.iTLMzn > .sc-csKJxZ').click();\n//Texto que deve aparecer quando o botão de Salvar Projeto for pressionado \ncy.get('.Toastify__toast-body').should('contain.text', 'Projeto atualizado com sucesso!');",
+              "err": {},
+              "uuid": "36d49718-0337-459e-9b12-d55fe47c1bcd",
+              "parentUUID": "fe9eedb9-871c-4cce-b569-4feed74fbd01",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste 3: Clicar botão de deletar um integrante da equipe, não deletar ele e salvar",
+              "fullTitle": "6 Testes de Projetos Teste 3: Clicar botão de deletar um integrante da equipe, não deletar ele e salvar",
+              "timedOut": null,
+              "duration": 2303,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginSite();\n//Abrindo o projeto #12-Teste2\ncy.get('[href=\"/adm/projetos/12\"]').click();\n//Clicando botão para deletar o integrante\ncy.get(':nth-child(2)>.sc-jiaSqj>.sc-hVcFVo>path').click();\n//Clicando o botão para Desfazer\ncy.get('.sc-jPQKUW').click();\n//Clicando no botão Salvar Projeto\ncy.get('.iTLMzn > .sc-csKJxZ').click();\n//Texto que deve aparecer quando o botão de Salvar Projeto for pressionado \ncy.get('.Toastify__toast-body').should('contain.text', 'Projeto atualizado com sucesso!');",
+              "err": {},
+              "uuid": "9fa5e47e-2dcb-4d77-bf88-6d10a976c3ab",
+              "parentUUID": "fe9eedb9-871c-4cce-b569-4feed74fbd01",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste 4: Clicar botão de deletar um integrante da equipe, deletar ele e Salvar",
+              "fullTitle": "6 Testes de Projetos Teste 4: Clicar botão de deletar um integrante da equipe, deletar ele e Salvar",
+              "timedOut": null,
+              "duration": 2332,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginSite();\n//Abrindo o projeto #24- Gato Robô\ncy.get('[href=\"/adm/projetos/24\"]').click();\n//Clicando botão para deletar um integrante\ncy.get(':nth-child(2)>.sc-jiaSqj>.sc-hVcFVo>path').click();\n//Clicando o botão de Prosseguir\ncy.get('.sc-bbxCgr > :nth-child(1)').click();\n//Clicando no botão Salvar Projeto\ncy.get('.iTLMzn > .sc-csKJxZ').click();\n//Texto que deve aparecer quando botão de Salvar Projeto for pressionado \ncy.get('.Toastify__toast-body').should('contain.text', 'Erro ao atualizar o projeto. Por favor, tente novamente.');",
+              "err": {},
+              "uuid": "708645ce-8399-46af-a402-871b8c48184e",
+              "parentUUID": "fe9eedb9-871c-4cce-b569-4feed74fbd01",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste 5: Clicar no botão para modificação  ou de Status ou Paralela, modificar o Status do projeto e salvar",
+              "fullTitle": "6 Testes de Projetos Teste 5: Clicar no botão para modificação  ou de Status ou Paralela, modificar o Status do projeto e salvar",
+              "timedOut": null,
+              "duration": 2397,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginSite();\n//Abrindo o projeto #12-Teste2\ncy.get('[href=\"/adm/projetos/12\"]').click();\n//Clicando o botão para modificação ou de Status ou Paralela\ncy.get('.sc-gUjWJS>.sc-kiTBBF>path').click();\n//Modificando o Status do projeto\ncy.get(':nth-child(1) > .sc-ldgOGP').select('Sem pendências');\n//Clicando o botão para salvar a modificação feita\ncy.get('.sc-hiTDLB>path').click();\n//Clicando no botão Salvar Projeto\ncy.get('.iTLMzn > .sc-csKJxZ').click();\n//Texto que deve aparecer quando o botão de Salvar Projeto for pressionado \ncy.get('.Toastify__toast-body').should('contain.text', 'Projeto atualizado com sucesso!');",
+              "err": {},
+              "uuid": "897eef3a-12c3-48a5-956d-0dd52af7c14f",
+              "parentUUID": "fe9eedb9-871c-4cce-b569-4feed74fbd01",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste 6: Clicar botão de modificação ou de Status ou de Paralela, modificar a Paralela e salvar",
+              "fullTitle": "6 Testes de Projetos Teste 6: Clicar botão de modificação ou de Status ou de Paralela, modificar a Paralela e salvar",
+              "timedOut": null,
+              "duration": 2572,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginSite();\n//Abrindo o projeto #12-Teste2\ncy.get('[href=\"/adm/projetos/12\"]').click();\n//Clicando o botão para modificação ou de Status ou Paralela\ncy.get('.sc-gUjWJS>.sc-kiTBBF>path').click();\n//Modificando a Paralela\ncy.get(':nth-child(2) > .sc-ldgOGP').select('Projeto teste');\n//Clicando o botão para salvar a modificação feita\ncy.get('.sc-hiTDLB>path').click();\n//Clicando no botão Salvar Projeto\ncy.get('.iTLMzn > .sc-csKJxZ').click();\n//Texto que deve aparecer quando o botão de Salvar Projeto for pressionado \ncy.get('.Toastify__toast-body').should('contain.text', 'Projeto atualizado com sucesso!');",
+              "err": {},
+              "uuid": "bef024d4-d82b-4a2d-be19-d7acb44a2508",
+              "parentUUID": "fe9eedb9-871c-4cce-b569-4feed74fbd01",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bee6177d-f184-414b-b411-8fcbd674c0d4",
+            "36d49718-0337-459e-9b12-d55fe47c1bcd",
+            "9fa5e47e-2dcb-4d77-bf88-6d10a976c3ab",
+            "708645ce-8399-46af-a402-871b8c48184e",
+            "897eef3a-12c3-48a5-956d-0dd52af7c14f",
+            "bef024d4-d82b-4a2d-be19-d7acb44a2508"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16225,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
