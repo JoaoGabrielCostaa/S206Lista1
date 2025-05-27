@@ -28,13 +28,13 @@ Os testes estão localizados em `cypress/e2e` e cobrem os seguintes cenários:
 2. **Execute o Cypress:**
 
    ```bash
-   npx cypress open
+   npm run cypress:open
    ```
 
    Ou para rodar em modo headless:
 
    ```bash
-   npx cypress run
+   npm run cypress:run
    ```
 
 ## Estrutura dos Arquivos
