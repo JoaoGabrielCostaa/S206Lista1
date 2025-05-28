@@ -1,4 +1,15 @@
 {
+  "name": "confia-no-pai-ui-tests",
+  "version": "1.0.0",
+  "description": "Este repositório contém testes automatizados utilizando [Cypress](https://www.cypress.io/) para validar os principais casos de uso do site [https://confianopai.com/login](https://confianopai.com/login).",
+  "main": "",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
     "cypress": "^14.4.0"
   },

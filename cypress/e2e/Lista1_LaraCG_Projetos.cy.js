@@ -1,21 +1,23 @@
-//Lista 1 - 6 testes de Projetos 
+//Lista 1 - 6 testes de Projetos
+
+import { logarNoSite } from "../support/auth"
 
 describe('6 Testes de Projetos', () => {
   it('Teste 1: Teste para abrir um projeto e salvar', () => {
-    loginSite()
+    logarNoSite()
 
     //Abrindo o projeto #8
     cy.get('[href="/adm/projetos/8"]').click()
-    
+
     //Clicando no botão Salvar Projeto
     cy.get('.iTLMzn > .sc-csKJxZ').click()
 
-    //Texto que deve aparecer quando o botão de Salvar Projeto for pressionado 
+    //Texto que deve aparecer quando o botão de Salvar Projeto for pressionado
     cy.get('.Toastify__toast-body').should('contain.text', 'O nome do projeto não pode estar vazio.')
   })
 
   it('Teste 2: Clicar para modificar o título de um projeto e salvar', () => {
-    loginSite()
+    logarNoSite()
 
     //Abrindo o projeto #12-Teste2
     cy.get('[href="/adm/projetos/12"]').click()
@@ -23,18 +25,18 @@ describe('6 Testes de Projetos', () => {
     //Clicando o botão do bloco de notas ao lado do nome do projeto
     cy.get('.sc-iCKXBC > [viewBox="0 0 576 512"]').click()
 
-    //Clicando o botão para salvar 
+    //Clicando o botão para salvar
     cy.get('.sc-iCKXBC > [viewBox="0 0 448 512"]').click()
 
     //Clicando no botão Salvar Projeto
     cy.get('.iTLMzn > .sc-csKJxZ').click()
 
-    //Texto que deve aparecer quando o botão de Salvar Projeto for pressionado 
+    //Texto que deve aparecer quando o botão de Salvar Projeto for pressionado
     cy.get('.Toastify__toast-body').should('contain.text', 'Projeto atualizado com sucesso!')
   })
 
   it('Teste 3: Clicar botão de deletar um integrante da equipe, não deletar ele e salvar', () => {
-    loginSite()
+    logarNoSite()
 
     //Abrindo o projeto #12-Teste2
     cy.get('[href="/adm/projetos/12"]').click()
@@ -48,12 +50,12 @@ describe('6 Testes de Projetos', () => {
     //Clicando no botão Salvar Projeto
     cy.get('.iTLMzn > .sc-csKJxZ').click()
 
-    //Texto que deve aparecer quando o botão de Salvar Projeto for pressionado 
+    //Texto que deve aparecer quando o botão de Salvar Projeto for pressionado
     cy.get('.Toastify__toast-body').should('contain.text', 'Projeto atualizado com sucesso!')
   })
 
   it('Teste 4: Clicar botão de deletar um integrante da equipe, deletar ele e Salvar', () => {
-    loginSite()
+    logarNoSite()
 
     //Abrindo o projeto #24- Gato Robô
     cy.get('[href="/adm/projetos/24"]').click()
@@ -67,12 +69,12 @@ describe('6 Testes de Projetos', () => {
     //Clicando no botão Salvar Projeto
     cy.get('.iTLMzn > .sc-csKJxZ').click()
 
-    //Texto que deve aparecer quando botão de Salvar Projeto for pressionado 
+    //Texto que deve aparecer quando botão de Salvar Projeto for pressionado
     cy.get('.Toastify__toast-body').should('contain.text', 'Erro ao atualizar o projeto. Por favor, tente novamente.')
   })
 
   it('Teste 5: Clicar no botão para modificação  ou de Status ou Paralela, modificar o Status do projeto e salvar', () => {
-    loginSite()
+    logarNoSite()
 
     //Abrindo o projeto #12-Teste2
     cy.get('[href="/adm/projetos/12"]').click()
@@ -89,12 +91,12 @@ describe('6 Testes de Projetos', () => {
     //Clicando no botão Salvar Projeto
     cy.get('.iTLMzn > .sc-csKJxZ').click()
 
-    //Texto que deve aparecer quando o botão de Salvar Projeto for pressionado 
+    //Texto que deve aparecer quando o botão de Salvar Projeto for pressionado
     cy.get('.Toastify__toast-body').should('contain.text', 'Projeto atualizado com sucesso!')
   })
 
   it('Teste 6: Clicar botão de modificação ou de Status ou de Paralela, modificar a Paralela e salvar', () => {
-    loginSite()
+    logarNoSite()
 
     //Abrindo o projeto #12-Teste2
     cy.get('[href="/adm/projetos/12"]').click()
@@ -111,33 +113,69 @@ describe('6 Testes de Projetos', () => {
     //Clicando no botão Salvar Projeto
     cy.get('.iTLMzn > .sc-csKJxZ').click()
 
-    //Texto que deve aparecer quando o botão de Salvar Projeto for pressionado 
+    //Texto que deve aparecer quando o botão de Salvar Projeto for pressionado
     cy.get('.Toastify__toast-body').should('contain.text', 'Projeto atualizado com sucesso!')
   })
-  
 })
 
-//Função para o Login no Site confianopai
-function loginSite (){
-  //Nome do usuário (fixo)
-  let nome = 'lara@'
+  describe('Testes adicionais', () => {
+  it('Teste 7: Modificar título do projeto e salvar com sucesso', () => {
+    logarNoSite()
+    cy.get('[href="/adm/projetos/12"]').click()
+    cy.get('.sc-iCKXBC > [viewBox="0 0 576 512"]').click()
+    cy.get('input[name="titulo"]').clear().type('Título Automatizado')
+    cy.get('.sc-iCKXBC > [viewBox="0 0 448 512"]').click()
+    cy.get('.iTLMzn > .sc-csKJxZ').click()
+    cy.get('.Toastify__toast-body').should('contain.text', 'Projeto atualizado com sucesso!')
+  })
 
-  //Senha do usuário (fixa)
-  let senha = '123'
+  it('Teste 8: Adicionar descrição no projeto e salvar', () => {
+    logarNoSite()
+    cy.get('[href="/adm/projetos/12"]').click()
+    cy.get('textarea[name="descricao"]').clear().type('Descrição inserida via teste automatizado.')
+    cy.get('.iTLMzn > .sc-csKJxZ').click()
+    cy.get('.Toastify__toast-body').should('contain.text', 'Projeto atualizado com sucesso!')
+  })
 
-  //Colocando em uma lista infos_login
-  let infos_login = [nome, senha]
+  it('Teste 9: Alterar status e paralela juntos no projeto e salvar', () => {
+    logarNoSite()
+    cy.get('[href="/adm/projetos/12"]').click()
+    cy.get('.sc-gUjWJS>.sc-kiTBBF>path').click()
+    cy.get(':nth-child(1) > .sc-ldgOGP').select('Sem pendências')
+    cy.get(':nth-child(2) > .sc-ldgOGP').select('Projeto teste')
+    cy.get('.sc-hiTDLB>path').click()
+    cy.get('.iTLMzn > .sc-csKJxZ').click()
+    cy.get('.Toastify__toast-body').should('contain.text', 'Projeto atualizado com sucesso!')
+  })
 
-  //Fazendo o teste do Login 
-  cy.visit('https://confianopai.com/login')
+  it('Teste 10: Tentar salvar o projeto com título vazio', () => {
+    logarNoSite()
+    cy.get('[href="/adm/projetos/8"]').click()
+    cy.get('.sc-iCKXBC > [viewBox="0 0 576 512"]').click()
+    cy.get('input[name="titulo"]').clear()
+    cy.get('.sc-iCKXBC > [viewBox="0 0 448 512"]').click()
+    cy.get('.iTLMzn > .sc-csKJxZ').click()
+    cy.get('.Toastify__toast-body').should('contain.text', 'O nome do projeto não pode estar vazio.')
+  })
 
-  //Adicionando o nome de usuário e a senha
-  cy.get(':nth-child(2) > .sc-ktwOfi').type(nome)
-  cy.get(':nth-child(3) > .sc-ktwOfi').type(senha)
+  it('Teste 11: Tentar salvar o projeto com todos os integrantes removidos', () => {
+    logarNoSite()
+    cy.get('[href="/adm/projetos/24"]').click()
+    cy.get(':nth-child(2)>.sc-jiaSqj>.sc-hVcFVo>path').click()
+    cy.get('.sc-bbxCgr > :nth-child(1)').click()
+    cy.get(':nth-child(1)>.sc-jiaSqj>.sc-hVcFVo>path').click()
+    cy.get('.sc-bbxCgr > :nth-child(1)').click()
+    cy.get('.iTLMzn > .sc-csKJxZ').click()
+    cy.get('.Toastify__toast-body').should('contain.text', 'Erro ao atualizar o projeto.')
+  })
 
-  //Clicando para no botão 
-  cy.get('.sc-csKJxZ').click()
-
-  //Retornando a informação
-  return infos_login
-}
+  it('Teste 12: Falha ao alterar status com valor inválido no projeto', () => {
+    logarNoSite()
+    cy.get('[href="/adm/projetos/12"]').click()
+    cy.get('.sc-gUjWJS>.sc-kiTBBF>path').click()
+    cy.get(':nth-child(1) > .sc-ldgOGP').select('---')
+    cy.get('.sc-hiTDLB>path').click()
+    cy.get('.iTLMzn > .sc-csKJxZ').click()
+    cy.get('.Toastify__toast-body').should('contain.text', 'Erro ao atualizar o projeto.')
+  })
+})
