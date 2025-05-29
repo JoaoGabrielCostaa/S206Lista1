@@ -6,6 +6,13 @@ Este repositório contém testes automatizados utilizando [Cypress](https://www.
 
 Garantir a qualidade e o correto funcionamento das funcionalidades de login e gerenciamento de projetos no sistema Confia no Pai.
 
+## Membros do grupo
+ - Daniela Maria Barbosa Faria - GEC - 1688
+ - João Gabriel Betela da Costa - GES - 193
+ - Lívia Cecília Gomes Silva - GEC - 1937
+ - Lara Conte Gomes - GEC - 2177
+ - Tiago Augusto Costa Carvalho - GEC -
+
 ## Estrutura dos Testes
 
 Os testes estão localizados em `cypress/e2e` e cobrem os seguintes cenários:
