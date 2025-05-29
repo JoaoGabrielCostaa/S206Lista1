@@ -11,7 +11,7 @@ Garantir a qualidade e o correto funcionamento das funcionalidades de login e ge
  - João Gabriel Betela da Costa - GES - 193
  - Lívia Cecília Gomes Silva - GEC - 1937
  - Lara Conte Gomes - GEC - 2177
- - Tiago Augusto Costa Carvalho - GEC -
+ - Tiago Augusto Costa Carvalho - GEC - 1855
 
 ## Estrutura dos Testes
 
